@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => ({
+
+export default defineConfig({
   plugins: [react()],
-  base: mode === 'production' ? '/quest-website/' : '/',
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/hb20/',
-}));
+  
+  base: '/hb20/', 
+});
