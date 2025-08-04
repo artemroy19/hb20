@@ -1,0 +1,257 @@
+.math-block {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.math-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.math-content {
+  flex: 1;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  margin: 0 24px 24px;
+  border-radius: 0 0 20px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+  position: relative;
+  z-index: 1;
+}
+
+.math-example {
+  background: rgba(14, 165, 233, 0.1);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  margin-bottom: 32px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.math-example h3 {
+  color: #38bdf8;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.formula {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+
+.answers-progress {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.answer-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.placeholder {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.value {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  transition: all 0.3s ease;
+}
+
+.current-question {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.current-question h4 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.current-question p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.answer-input {
+  margin: 24px 0;
+}
+
+.answer-input input {
+  width: 140px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+.answer-input input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.answer-input input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.answer-input input:disabled {
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+.calculation-hint {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-top: 16px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Анимации для заполненных значений */
+.value:not(:empty) {
+  animation: fillValue 0.5s ease;
+}
+
+@keyframes fillValue {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .math-content {
+    margin: 0 12px 12px;
+    padding: 24px;
+  }
+
+  .math-example {
+    padding: 24px;
+  }
+
+  .formula {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .answers-progress {
+    gap: 12px;
+  }
+
+  .placeholder,
+  .value {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .current-question {
+    padding: 24px;
+  }
+
+  .current-question h4 {
+    font-size: 16px;
+  }
+
+  .current-question p {
+    font-size: 14px;
+  }
+
+  .answer-input input {
+    width: 120px;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formula {
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+
+  .answers-progress {
+    gap: 8px;
+  }
+
+  .placeholder,
+  .value {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .answer-input input {
+    width: 100px;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
