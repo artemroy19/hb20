@@ -27,7 +27,7 @@ const MainQuest: React.FC = () => {
       <div className="quest-completed">
         <div className="completion-content">
           <div className="completion-animation">🎉</div>
-          <h1>С днем рождения!</h1>
+          <h1>Саш, с днём рождения!</h1>
           <p>Ты успешно прошла все испытания!</p>
           <div className="final-code">
             <h2>Код от подарка:</h2>
@@ -38,7 +38,8 @@ const MainQuest: React.FC = () => {
             </div>
           </div>
           <p className="completion-message">
-            Теперь ты можешь открыть коробку и забрать свой подарок! 🎁
+            Теперь ты можешь открыть коробку и забрать свои подарки! <br/>
+            (P.S. Замок идёт приятным бонусом)
           </p>
           <button className="letter-button" onClick={handleShowLetter}>
             📜 Перечитать письмо
