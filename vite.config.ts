@@ -8,5 +8,5 @@ export default defineConfig(({ command, mode }) => ({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: 'hb3',
+  base: '/hb20/',
 }));
