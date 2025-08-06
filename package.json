@@ -1,16 +1,16 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "hb",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "homepage": "https://artemroy19.github.io/hb",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:github": "vite build --base=/quest-website/",
-    "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build:github",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",

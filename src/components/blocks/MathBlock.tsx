@@ -221,7 +221,7 @@ const MathBlock: React.FC = () => {
               type="number"
               value={answer}
               onChange={(e) => setAnswer(e.target.value)}
-              placeholder="Введите ответ"
+              placeholder="Ответ"
               disabled={showFeedback}
             />
           </div>
